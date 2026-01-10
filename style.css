@@ -1,0 +1,332 @@
+/* ================================
+   ESTILO GENERAL
+==================================*/
+body {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, #fdfcfb 0%, #f5f3ef 100%);
+  color: #333;
+}
+
+/* ================================
+   ENCABEZADO / MENÚ
+==================================*/
+.header {
+  background-color: #ffffff;
+  padding: 20px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.header .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #222;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+/* Efecto "coqueto" de subrayado en hover */
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #c6a664;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #c6a664;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ================================
+   SECCIÓN HERO (MÁS ELEGANTE)
+==================================*/
+.hero {
+  text-align: center;
+  background-color: transparent; /* Se quita el fondo gris */
+  padding: 60px 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Línea dorada de acento, como en el form */
+.hero::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #c6a664;
+  margin: 20px auto 0;
+  border-radius: 2px;
+}
+
+.hero h2 {
+  font-size: 2.4rem; /* Más grande */
+  margin-bottom: 10px;
+  color: #222;
+  font-weight: 600;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #555;
+  font-style: italic; /* Un toque elegante */
+}
+
+/* ================================
+   PRODUCTOS / TARJETAS (MÁS COQUETO)
+==================================*/
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px; /* Más espacio */
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 14px; /* Igual que el form */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Sombra más suave */
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Para el efecto de zoom */
+}
+
+.card:hover {
+  transform: translateY(-8px); /* Más levantamiento */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card img,
+.card .placeholder-box { /* Estilo para la imagen o el placeholder */
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  background: #f4f4f4; /* Fondo para el placeholder */
+}
+
+/* Efecto de zoom en la imagen */
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* PRECIO con color acento */
+.card p {
+  font-weight: 600;
+  color: #c6a664;
+  margin-top: 10px;
+  font-size: 1.15rem;
+}
+
+/* Estilo para el placeholder de tipo de producto */
+.card .placeholder-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #fdfcfb 0%, #f5f3ef 100%);
+}
+.card .placeholder-box h4 {
+  color: #aaa;
+  font-weight: 500;
+  font-style: italic;
+}
+
+
+/* ================================
+   PIE DE PÁGINA (MÁS ELEGANTE)
+==================================*/
+.footer {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 30px;
+  margin-top: 60px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* ================================
+   FORMULARIOS DE LOGIN / REGISTRO
+   (Se mantiene el estilo que te gustó)
+==================================*/
+.form-section {
+  max-width: 430px;
+  margin: 80px auto;
+  background-color: #ffffff;
+  padding: 45px 35px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.form-section h2 {
+  color: #222;
+  font-size: 1.9rem;
+  margin-bottom: 25px;
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.form-section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #c6a664;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.formulario {
+  text-align: left;
+}
+
+.formulario label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  font-weight: 500;
+  color: #444;
+}
+
+.formulario input,
+.formulario select {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.95rem;
+  background-color: #fafafa;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.formulario input:focus,
+.formulario select:focus {
+  border-color: #c6a664;
+  box-shadow: 0 0 5px rgba(198, 166, 100, 0.4);
+  background-color: #fff;
+}
+
+.formulario button {
+  width: 100%;
+  background: linear-gradient(135deg, #c6a664, #a48c53);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+}
+
+.formulario button:hover {
+  background: linear-gradient(135deg, #b89b58, #8f7842);
+  transform: translateY(-2px);
+}
+
+.links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.links a {
+  color: #c6a664;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #a48c53;
+  text-decoration: underline;
+}
+
+/* ================================
+   DETALLES ADICIONALES / EFECTOS
+==================================*/
+input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+select {
+  background-color: #fff;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23c6a664' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 18px;
+  padding-right: 35px;
+}
+
+/* ================================
+   RESPONSIVE
+==================================*/
+@media (max-width: 500px) {
+  .form-section {
+    margin: 50px 15px;
+    padding: 30px 20px;
+  }
+
+  .form-section h2 {
+    font-size: 1.6rem;
+  }
+}
