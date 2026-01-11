@@ -1,4 +1,4 @@
-## Proyecto 2: Joyería Luxoria
+## Proyecto 20: Joyería Luxoria
 Sistema de administración web para gestionar operaciones básicas de una joyería: clientes, inventario de productos y control de ventas.
 
 ### 🛠️ Tecnologías
