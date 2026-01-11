@@ -1,215 +1,32 @@
-<?php
-// 1. INICIAR SESIÓN Y CARGAR ORM
-session_start();
-require_once "src/bootstrap.php"; // Carga el $entityManager de Doctrine
-include("src/conexion.php");     // Mantenemos mysqli para la lógica de login seguro
-
-$vista = isset($_GET['vista']) ? $_GET['vista'] : 'inicio';
-
-// 2. LÓGICA DE CERRAR SESIÓN
-if ($vista === 'logout') {
-    session_unset();
-    session_destroy();
-    header("Location: index.php");
-    exit;
-}
-
-// 3. LÓGICA DE LOGIN (Blindada contra Inyección SQL)
-if (isset($_POST['accion']) && $_POST['accion'] === 'login') {
-    $usuario = $_POST['usuario']; 
-    $password = $_POST['password'];
-    $rol = $_POST['rol'];
-
-    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE nombre_usuario = ? AND rol = ?");
-    $stmt->bind_param("ss", $usuario, $rol);
-    $stmt->execute();
-    $resultado = $stmt->get_result();
-
-    if ($resultado && $fila = $resultado->fetch_assoc()) {
-        if (password_verify($password, $fila['contrasena'])) {
-            $_SESSION['usuario_logueado'] = $fila['nombre_usuario']; 
-            $_SESSION['rol_logueado'] = $fila['rol'];
-            header("Location: index.php?vista=inicio"); 
-            exit; 
-        } else {
-            echo "<script>alert('Contraseña incorrecta');</script>";
-        }
-    } else {
-        echo "<script>alert('Usuario o rol no encontrado');</script>";
-    }
-    $stmt->close();
-}
-
-// 4. LÓGICA DE REGISTRO (Blindada)
-if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
-    $usuario = $_POST['usuario'];
-    $email = $_POST['email']; 
-    $password = $_POST['password'];
-    $rol = $_POST['rol'];
-
-    $password_hash = password_hash($password, PASSWORD_BCRYPT);
-    
-    $stmt_check = $conn->prepare("SELECT id FROM usuarios WHERE nombre_usuario = ? OR email = ?");
-    $stmt_check->bind_param("ss", $usuario, $email);
-    $stmt_check->execute();
-    $existe = $stmt_check->get_result();
-
-    if ($existe->num_rows > 0) {
-        echo "<script>alert('El nombre de usuario o el email ya existen');</script>";
-    } else {
-        $stmt_ins = $conn->prepare("INSERT INTO usuarios (nombre_usuario, email, contrasena, rol) VALUES (?, ?, ?, ?)");
-        $stmt_ins->bind_param("ssss", $usuario, $email, $password_hash, $rol);
-        
-        if ($stmt_ins->execute()) {
-            echo "<script>alert('Cuenta creada correctamente'); window.location='index.php?vista=login';</script>";
-        } else {
-            echo "<script>alert('Error al crear la cuenta');</script>";
-        }
-        $stmt_ins->close();
-    }
-    $stmt_check->close();
-}
-
-// 5. LÓGICA DE ACTUALIZAR PRECIO (USANDO EL ORM DOCTRINE)
-if (isset($_POST['accion']) && $_POST['accion'] === 'actualizar_precio') {
-    if (isset($_SESSION['rol_logueado']) && $_SESSION['rol_logueado'] === 'admin') {
-        
-        $id_producto = $_POST['id'];
-        $nuevo_precio = $_POST['costo_venta']; 
-
-        // Uso del Namespace completo para encontrar el producto
-        $producto = $entityManager->find(\App\Entities\Producto::class, $id_producto);
-
-        if ($producto) {
-            $producto->setPrecio($nuevo_precio);
-            $entityManager->flush(); // Guarda los cambios físicamente
-            
-            header("Location: index.php?vista=inicio&status=success");
-            exit;
-        }
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LUXORIA-Plata 925</title>
+  <title>LUXORIA - Vista Previa</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <header class="header">
     <div class="container">
       <h1>LUXORIA</h1>
       <nav>
-        <a href="index.php">Inicio</a>
+        <a href="#">Inicio</a>
         <a href="#">Anillos</a>
         <a href="#">Collares</a>
-        <a href="#">Pulseras</a>
-
-        <?php if (isset($_SESSION['usuario_logueado'])): ?>
-            <a href="index.php?vista=logout">Cerrar Sesión (<?php echo $_SESSION['usuario_logueado']; ?>)</a> 
-        <?php else: ?>
-            <a href="index.php?vista=login">Iniciar Sesión</a>
-        <?php endif; ?>
+        <a href="#">Iniciar Sesión</a>
       </nav>
     </div>
   </header>
-
   <main class="container contenido">
-
-    <?php if ($vista === 'inicio'): ?>
-      <section class="hero">
-        <h2>Encuentra la joya perfecta para ti</h2>
-        <p>Elegancia y estilo en plata 925</p>
-      </section>
-
-      <div class="grid">
-        <?php
-        $sql_productos = "SELECT id, nombre, tipo_producto, costo_venta FROM productos"; 
-        $res_productos = mysqli_query($conn, $sql_productos);
-
-        if ($res_productos && mysqli_num_rows($res_productos) > 0) {
-            while ($fila_prod = mysqli_fetch_assoc($res_productos)) {
-                ?>
-                <div class="card">
-                   <div class="placeholder-box">
-                    <h4><?php echo $fila_prod['tipo_producto']; ?></h4>
-                  </div>
-                  <h3><?php echo $fila_prod['nombre']; ?></h3>
-
-                  <?php if (isset($_SESSION['usuario_logueado']) && $_SESSION['rol_logueado'] === 'admin'): ?>
-                    <form method="POST" action="" class="formulario" style="display:flex; align-items:center; justify-content:center;">
-                      <input type="hidden" name="accion" value="actualizar_precio">
-                      <input type="hidden" name="id" value="<?php echo $fila_prod['id']; ?>">
-                      <span style="font-weight:bold; color:#c6a664;">$</span>
-                      <input type="number" step="0.01" name="costo_venta" value="<?php echo $fila_prod['costo_venta']; ?>" style="width:70px; margin:0 5px;">
-                      <button type="submit" style="width:auto; padding:5px 10px; margin-top:0;">OK</button>
-                    </form>
-                  <?php else: ?>
-                    <p>$<?php echo number_format($fila_prod['costo_venta'], 2); ?></p>
-                  <?php endif; ?>
-                </div>
-                <?php
-            }
-        } else {
-            echo "<p>No hay productos disponibles.</p>";
-        }
-        ?>
-      </div>
-
-    <?php elseif ($vista === 'login'): ?>
-      <section class="form-section">
-        <h2>Iniciar Sesión</h2>
-        <form method="POST" action="index.php" class="formulario">
-          <input type="hidden" name="accion" value="login">
-          <label>Usuario:</label>
-          <input type="text" name="usuario" required>
-          <label>Contraseña:</label>
-          <input type="password" name="password" required>
-          <label>Rol:</label>
-          <select name="rol">
-            <option value="cliente">Cliente</option>
-            <option value="admin">Administrador</option>
-          </select>
-          <button type="submit">Entrar</button>
-        </form>
-        <div class="links">
-          <a href="index.php?vista=registro">¿No tienes cuenta? Regístrate</a>
-        </div>
-      </section>
-
-    <?php elseif ($vista === 'registro'): ?>
-      <section class="form-section">
-        <h2>Crear Cuenta</h2>
-        <form method="POST" action="index.php" class="formulario">
-          <input type="hidden" name="accion" value="registro">
-          <label>Nombre de Usuario:</label>
-          <input type="text" name="usuario" required>
-          <label>Email:</label>
-          <input type="email" name="email" required>
-          <label>Contraseña:</label>
-          <input type="password" name="password" required>
-          <label>Selecciona tu Rol:</label>
-          <select name="rol">
-            <option value="cliente">Cliente</option>
-            <option value="admin">Administrador</option>
-          </select>
-          <button type="submit">Registrarse</button>
-        </form>
-        <div class="links">
-          <a href="index.php?vista=login">Ya tengo cuenta</a>
-        </div>
-      </section>
-    <?php endif; ?>
+    <section class="hero">
+      <h2>Encuentra la joya perfecta</h2>
+      <p>Vista previa estática para GitHub Pages</p>
+    </section>
+    <div class="grid">
+      <div class="card"><h3>Anillo de Plata</h3><p>$1,200.00</p></div>
+      <div class="card"><h3>Collar Perla</h3><p>$2,500.00</p></div>
+    </div>
   </main>
-
-  <footer class="footer">
-    <p>&copy; 2025 LUXORIA - Joyería Fina</p>
-  </footer>
-
 </body>
 </html>
