@@ -18,15 +18,7 @@ Sistema de administración web para gestionar operaciones básicas de una joyer�
 - Estructura profesional mediante carpeta `public_html` y lógica en `src`.
 
 ### 📂 Estructura del Proyecto
-├── index.php                # Acceso principal al sistema
-├── public_html/             # Archivos públicos del servidor
-│   ├── index.php            # Dashboard principal de la joyería
-│   ├── editar_producto.php  # Gestión de modificaciones
-│   ├── style.css            # Hoja de estilos (Diseño)
-│   ├── src/                 # Código fuente (Lógica interna)
-│   └── vendor/              # Dependencias de Composer
-├── composer.json            # Configuración de dependencias
-└── u821594572_joyeria_db.sql # Base de datos MySQL
+<img src= "https://private-user-images.githubusercontent.com/237490521/534318876-5befa24c-8b97-473a-970e-5c3eee9025ec.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjgxMDgwNDUsIm5iZiI6MTc2ODEwNzc0NSwicGF0aCI6Ii8yMzc0OTA1MjEvNTM0MzE4ODc2LTViZWZhMjRjLThiOTctNDczYS05NzBlLTVjM2VlZTkwMjVlYy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwMTExJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDExMVQwNTAyMjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jODYwMWFkMTVkNGY4NWZlMjZkOGFkNzY0NDYxMGQ3ZGEwNzJhY2MyZTcwNmEyZDMyYWJiMDNjMGNkMTBjNzEwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.ZNIh5im3fP-alWcnlhFl2xf_2RzaS1vNT-nQhuYZaM0" />
 ### 🖼️ Previews
 
 <table>
