@@ -24,7 +24,7 @@ Sistema de administración web para gestionar operaciones básicas de una joyer�
 
  ### 🖼️ Previews
 
-<table>
+
   <tr>
     <td width="50%">
       <p align="center"><b>Página Joyería</b></p>
@@ -49,7 +49,6 @@ Sistema de administración web para gestionar operaciones básicas de una joyer�
       <img src="https://private-user-images.githubusercontent.com/237490521/534316674-3864e68f-4169-4b0b-85a3-b99c3619ca38.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjgxMDczOTYsIm5iZiI6MTc2ODEwNzA5NiwicGF0aCI6Ii8yMzc0OTA1MjEvNTM0MzE2Njc0LTM4NjRlNjhmLTQxNjktNGIwYi04NWEzLWI5OWMzNjE5Y2EzOC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwMTExJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDExMVQwNDUxMzZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zYmFkMzlhNjliODAyMTYyNmQ4YjU2ZmUwZTEwMmJmNjM1NDZjMTE3NzhjMWNlMGJiZTFkZDZlZTJhMmNhZDY5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Q2NNKbUuitEoawYevYpllkB_R6zHWydCbPJfjveWNLc" width="100%" style="border-radius: 8px;"/>
     </td>
   </tr>
-</table>
     
   </tr>
 
