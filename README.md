@@ -55,7 +55,6 @@ Sistema de administración web para gestionar operaciones básicas de una joyer�
 
 
 ### 🔗 Enlaces
-* **Código Fuente:** [Repositorio en GitHub]([https://github.com/danaemorenmon/Joyeria](https://github.com/danaemoremon/joyeria))
+* **Código Fuente:** [Repositorio en GitHub](https://github.com/danaemoremon/joyeria)
 * **Demo en Vivo (Github Pages):** [Tienda de Joyería Web](https://danaemorenmon.github.io/joyeria/)
-* **Demo en Vivo (Hosting):** [Luxoria Shop Web]([https://6shk.gt.tc/index.php](https://steelblue-meerkat-544740.hostingersite.com/))
-* 
+* **Demo en Vivo (Hosting):** [Luxoria Shop Web](https://steelblue-meerkat-544740.hostingersite.com/)
