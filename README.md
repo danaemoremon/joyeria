@@ -38,20 +38,14 @@ Sistema de administración web para gestionar operaciones básicas de una joyer�
 
 ### 🖼️ Previews
 
-|      Módulo      |            Vista previa            |
-| :--------------: | :--------------------------------: |
-| Pagina Principal | ![Página Principal](https://github.com/user-attachments/assets/e1bfc41c-fe0a-4067-ac85-b99b5382f689)|
-|     Registro     |    ![Registro](https://github.com/user-attachments/assets/50801974-71f2-4049-9f09-cfd64f16b11a)
-  |
-| Inicio de sesión | ![Inicio de sesiíon](https://github.com/user-attachments/assets/9c1486d3-a263-4c58-9698-4b7d70f08152)
-  |
+|      Módulo      |                                             Vista previa                                              |
+| :--------------: | :---------------------------------------------------------------------------------------------------: |
+| Pagina Principal | ![Página Principal](https://github.com/user-attachments/assets/e1bfc41c-fe0a-4067-ac85-b99b5382f689)  |
+|     Registro     |     ![Registro](https://github.com/user-attachments/assets/50801974-71f2-4049-9f09-cfd64f16b11a)      |
+| Inicio de sesión | ![Inicio de sesiíon](https://github.com/user-attachments/assets/9c1486d3-a263-4c58-9698-4b7d70f08152) |
 
 ### 🔗 Enlaces
 
 - **Código Fuente:** [Repositorio en GitHub](https://github.com/danaemoremon/joyeria)
 - **Demo en Vivo (Github Pages):** [Tienda de Joyería Web](https://danaemoremon.github.io/joyeria/)
 - **Demo en Vivo (Hosting):** [Luxoria Shop Web](https://steelblue-meerkat-544740.hostingersite.com/)
-
-```
-
-```
