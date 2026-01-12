@@ -40,9 +40,11 @@ Sistema de administración web para gestionar operaciones básicas de una joyer�
 
 |      Módulo      |            Vista previa            |
 | :--------------: | :--------------------------------: |
-| Pagina Principal | ![Página Principal](./general.png) |
-|     Registro     |    ![Registro](./register.jpeg)    |
-| Inicio de sesión | ![Inicio de sesión](./login.jpeg)  |
+| Pagina Principal | ![Página Principal](https://github.com/user-attachments/assets/e1bfc41c-fe0a-4067-ac85-b99b5382f689)|
+|     Registro     |    ![Registro](https://github.com/user-attachments/assets/50801974-71f2-4049-9f09-cfd64f16b11a)
+  |
+| Inicio de sesión | ![Inicio de sesiíon](https://github.com/user-attachments/assets/9c1486d3-a263-4c58-9698-4b7d70f08152)
+  |
 
 ### 🔗 Enlaces
 
