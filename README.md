@@ -19,8 +19,15 @@ Sistema de administración web para gestionar operaciones básicas de una joyer�
 - **Arquitectura Limpia:** Separación de responsabilidades con una carpeta `public_html` para el acceso web y `src` para la lógica interna.
 
 ### 📂 Estructura del Proyecto
-<img src= <img width="1353" height="724" alt="image" src="https://github.com/user-attachments/assets/fcae33b7-ebc2-4b21-973d-a833e229d22f" />
- />
+```text
+├── index.html                # Interfaz estática para GitHub Pages
+├── index.php                 # Acceso principal al sistema dinámico
+├── style.css                 # Estilos visuales de la joyería
+├── u821594572_joyeria_db.sql # Respaldo de la base de datos
+└── src/                      # Carpeta de lógica y ORM
+    ├── bootstrap.php         # Inicialización del ORM Doctrine
+    ├── conexion.php          # Conexión segura a la base de datos
+    └── Entities/             # Entidades para el mapeo de objetos (Producto.php)
 ### 🖼️ Previews
 
 
