@@ -25,38 +25,37 @@ Sistema de administración web para gestionar operaciones básicas de una joyer�
 
 ### 📂 Estructura del Proyecto
 
-```text
-├── index.html                # Interfaz estática para GitHub Pages
-├── index.php                 # Acceso principal al sistema dinámico
-├── style.css                 # Estilos visuales de la joyería
+├── index.html # Interfaz estática para GitHub Pages
+├── index.php # Acceso principal al sistema dinámico
+├── style.css # Estilos visuales de la joyería
 ├── u821594572_joyeria_db.sql # Respaldo de la base de datos
-└── src/                      # Carpeta de lógica y ORM
-    ├── bootstrap.php         # Inicialización del ORM Doctrine
-    ├── conexion.php          # Conexión segura a la base de datos
-    └── Entities/             # Entidades para el mapeo de objetos (Producto.php)
-
-
- ### 🖼️ Previews
+└── src/ # Carpeta de lógica y ORM
+├── bootstrap.php # Inicialización del ORM Doctrine
+├── conexion.php # Conexión segura a la base de datos
+└── Entities/ # Entidades para el mapeo de objetos (Producto.php)
 
 ### 🖼️ Previews
 
-| Página Joyería | Login de Acceso |
-| :---: | :---: |
+### 🖼️ Previews
+
+|          Página Joyería          | Login de Acceso |
+| :------------------------------: | :-------------: |
 | ![Página Joyería](./general.png) |
 
-| Crear Cuenta | Tablas | Productos |
-| :---: | :---: | :---: |
+|           Crear Cuenta           | Tablas | Productos |
+| :------------------------------: | :----: | :-------: |
 | ![Crear Cuenta](./register.jpeg) |
 
-| Crear Cuenta | Tablas | Productos |
-| :---: | :---: | :---: |
+|           Crear Cuenta           | Tablas | Productos |
+| :------------------------------: | :----: | :-------: |
 | ![Crear Cuenta](./register.jpeg) |
-
-
-
 
 ### 🔗 Enlaces
-* **Código Fuente:** [Repositorio en GitHub](https://github.com/danaemoremon/joyeria)
-* **Demo en Vivo (Github Pages):** [Tienda de Joyería Web](https://danaemoremon.github.io/joyeria/)
-* **Demo en Vivo (Hosting):** [Luxoria Shop Web](https://steelblue-meerkat-544740.hostingersite.com/)
+
+- **Código Fuente:** [Repositorio en GitHub](https://github.com/danaemoremon/joyeria)
+- **Demo en Vivo (Github Pages):** [Tienda de Joyería Web](https://danaemoremon.github.io/joyeria/)
+- **Demo en Vivo (Hosting):** [Luxoria Shop Web](https://steelblue-meerkat-544740.hostingersite.com/)
+
+```
+
 ```
