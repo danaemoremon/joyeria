@@ -25,30 +25,24 @@ Sistema de administración web para gestionar operaciones básicas de una joyer�
 
 ### 📂 Estructura del Proyecto
 
-├── index.html # Interfaz estática para GitHub Pages
-├── index.php # Acceso principal al sistema dinámico
-├── style.css # Estilos visuales de la joyería
+```
+├── index.html                # Interfaz estática para GitHub Pages
+├── index.php                 # Acceso principal al sistema dinámico
+├── style.css                 # Estilos visuales de la joyería
 ├── u821594572_joyeria_db.sql # Respaldo de la base de datos
-└── src/ # Carpeta de lógica y ORM
-├── bootstrap.php # Inicialización del ORM Doctrine
-├── conexion.php # Conexión segura a la base de datos
-└── Entities/ # Entidades para el mapeo de objetos (Producto.php)
+└── src/                      # Carpeta de lógica y ORM
+    ├── bootstrap.php         # Inicialización del ORM Doctrine
+    ├── conexion.php          # Conexión segura a la base de datos
+    └── Entities/             # Entidades para el mapeo de objetos (Producto.php)
+```
 
 ### 🖼️ Previews
 
-### 🖼️ Previews
-
-|          Página Joyería          | Login de Acceso |
-| :------------------------------: | :-------------: |
-| ![Página Joyería](./general.png) |
-
-|           Crear Cuenta           | Tablas | Productos |
-| :------------------------------: | :----: | :-------: |
-| ![Crear Cuenta](./register.jpeg) |
-
-|           Crear Cuenta           | Tablas | Productos |
-| :------------------------------: | :----: | :-------: |
-| ![Crear Cuenta](./register.jpeg) |
+|      Módulo      |            Vista previa            |
+| :--------------: | :--------------------------------: |
+| Pagina Principal | ![Página Principal](./general.png) |
+|     Registro     |    ![Registro](./register.jpeg)    |
+| Inicio de sesión | ![Inicio de sesión](./login.jpeg)  |
 
 ### 🔗 Enlaces
 
